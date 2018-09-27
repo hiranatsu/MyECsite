@@ -1,5 +1,6 @@
 package com.internousdev.myecsite01.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -28,12 +29,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		//ログイン認証が成功した場合、次の画面で「商品情報」を取得。
 		if(((LoginDTO) session.get("loginUser")).getLoginFlg()){
 			result = SUCCESS;
-			BuyItemDTO biDTO = biDAO.getBuyItemInfo();
-
+			BuyItemDAO biDAO = new BuyItemDAO();
+			List<BuyItemDTO> biDTOList = biDAO.getBuyItemInfo();
+			session.put("buyItemList", biDTOList);
 			session.put("login_user_id", lgDTO.getLoginId());
-			session.put("id", biDTO.getId());
-			session.put("buyItem_name", biDTO.getItemName());
-			session.put("buyItem_price", biDTO.getItemPrice());
 
 			return result;
 

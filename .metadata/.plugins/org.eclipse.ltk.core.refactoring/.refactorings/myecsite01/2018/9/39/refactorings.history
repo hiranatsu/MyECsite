@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="メソッド &apos;public BuyItemDTO com.internousdev.myecsite01.dao.BuyItemDAO.getBuyItemInfo()&apos; を &apos;public List&lt;BuyItemDTO&gt; getBuyItemInfo()&apos; に変更します&#x0D;&#x0A;- 元のプロジェクト: &apos;myecsite01&apos;&#x0D;&#x0A;- オリジナル要素: &apos;com.internousdev.myecsite01.dao.BuyItemDAO.getBuyItemInfo()&apos;&#x0D;&#x0A;- 新規の戻りの型: &apos;List&lt;BuyItemDTO&gt;&apos;" delegate="false" deprecate="true" description="メソッド &apos;getBuyItemInfo&apos; を変更します" flags="589830" id="org.eclipse.jdt.ui.change.method.signature" input="/src&lt;com.internousdev.myecsite01.dao{BuyItemDAO.java[BuyItemDAO~getBuyItemInfo" name="getBuyItemInfo" return="List&lt;BuyItemDTO&gt;" stamp="1538024633196" version="1.0"/>
+</session>

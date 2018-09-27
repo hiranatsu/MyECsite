@@ -1,5 +1,6 @@
 package com.internousdev.myecsite01.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -19,10 +20,8 @@ public class HomeAction extends ActionSupport implements SessionAware{
 		//一度ログインしている場合、ログイン認証画面に遷移せず商品画面にいく。
 		if(session.containsKey("id")){
 			BuyItemDAO biDAO = new BuyItemDAO();
-			BuyItemDTO biDTO = biDAO.getBuyItemInfo();
-			session.put("id", biDTO.getId());
-			session.put("buyItem_name", biDTO.getItemName());
-			session.put("buyItem_price", biDTO.getItemPrice());
+			List<BuyItemDTO> biDTOList = biDAO.getBuyItemInfo();
+			session.put("buyItemList", biDTOList);
 
 			result = SUCCESS;
 		}
