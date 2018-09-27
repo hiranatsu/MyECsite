@@ -2,8 +2,8 @@ set names utf8;
 set foreign_key_checks = 0;
 drop database if exists myecsite01;
 
-create database if not exists myecsite01;
-use myecsite01;
+create database if not exists myecsite;
+use myecsite;
 
 drop table if exists login_user_transaction;
 create table login_user_transaction(
