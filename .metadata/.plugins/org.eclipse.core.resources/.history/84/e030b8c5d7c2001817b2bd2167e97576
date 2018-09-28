@@ -1,0 +1,10 @@
+package com.internousdev.myecsite02.dto;
+
+import java.util.Date;
+
+public class Category {
+	
+	private int id;
+	
+
+}
