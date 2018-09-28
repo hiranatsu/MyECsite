@@ -1,0 +1,15 @@
+package com.internousdev.myecsite02.dto;
+
+import java.util.Date;
+
+public class Category {
+
+	private int id;
+	private int categoryId;
+	private String categoryName;
+	private String categoryDescription;
+	private Date insertDate;
+	private Date updateDate;
+
+
+}
