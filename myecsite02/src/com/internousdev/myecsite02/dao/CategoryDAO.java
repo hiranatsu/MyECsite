@@ -16,10 +16,9 @@ public class CategoryDAO {
 	public List<CategoryDTO> getCategoryList(){
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
-
 		List<CategoryDTO> categoryDTOList = new ArrayList<CategoryDTO>();
-
 		String sql = "select * from item_category";
+
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -44,10 +43,12 @@ public class CategoryDAO {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
-		try{
-			con.close();
-		}catch(SQLException e){
-			e.printStackTrace();
+		finally{
+			try{
+				con.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 		return categoryDTOList;
 
