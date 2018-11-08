@@ -1,0 +1,25 @@
+package com.internousdev.myecsite02.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
+public class InputChecker {
+
+	public List<String> doCheck (String propertyName, String value, int minLength, int maxLength,
+			boolean alphabet, boolean kanji, boolean hiragana, boolean halfDigit, boolean halfSymbols, boolean katakana, boolean fullEidthSymbols){
+		List<String> stringList = new ArrayList<String>();
+		if(StringUtils.isEmpty(value)){
+			stringList.add(propertyName + "を入力してください。");
+			value="";
+		}else if(!(value=="")){
+			String regularExpression = "";
+			List<String> characterTypeList = new ArrayList<String>();
+			if(alphabet || kanji || hiragana || halfDigit || halfSymbols || katakana || fullWidthSymbols){
+
+			}
+		}
+	}
+
+}
