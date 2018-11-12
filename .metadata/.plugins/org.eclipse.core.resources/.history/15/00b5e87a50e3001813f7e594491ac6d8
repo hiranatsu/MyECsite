@@ -8,7 +8,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.myecsite02.dao.CategoryDAO;
-import com.internousdev.myecsite02.dao.UserInfoDAO;
 import com.internousdev.myecsite02.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -31,25 +30,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 			List<String>loginIdErrorMessageList = new ArrayList<String>();
 			List<String>passwordErrorMessageList = new ArrayList<String>();
-
-			//入力された値を検証
 			InputChecker ic = new InputChecker();
-			loginIdErrorMessageList = ic.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
-			passwordErrorMessageList = ic.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
-
-			//loginIdErrorMessageListが空でない場合、sessionにListの内容をput、ログイン状態をremove
-			if(loginIdErrorMessageList.size()!=0){
-				session.put("loginIdErrorMessageList", loginIdErrorMessageList);
-				session.remove("logined");
-			}
-			//passwordErrorMessageListが空でない場合、sessionにListの内容をput、ログイン状態をremove
-			if(passwordErrorMessageList.size()!=0){
-				session.put("passwordErrorMessageList", passwordErrorMessageList);
-				session.remove("logined");
-			}
-
-			//
-			UserInfoDAO uiDAO = new UserInfoDAO();
 
 		}
 	}

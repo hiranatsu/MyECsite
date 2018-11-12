@@ -5,23 +5,14 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
-/*このプログラムは渡された値を正規表現か検証するもの。
-  結果はList形式で渡される。
- */
-
 public class InputChecker {
 
 	public List<String> doCheck (String propertyName, String value, int minLength, int maxLength,
 			boolean alphabet, boolean kanji, boolean hiragana, boolean halfDigit, boolean halfSymbols, boolean katakana, boolean fullWidthSymbols){
-		//検証した結果を入れるList
 		List<String> stringList = new ArrayList<String>();
-
-		//入力欄が空か検証
 		if(StringUtils.isEmpty(value)){
 			stringList.add(propertyName + "を入力してください。");
 			value="";
-
-		//入力欄が空ではない場合、入力された文字のタイプから何を判別するのか決める。
 		}else if(!(value=="")){
 			String regularExpression = "";
 			List<String> characterTypeList = new ArrayList<String>();
@@ -60,7 +51,6 @@ public class InputChecker {
 				regularExpression += "]+";
 			}
 
-			//判別した項目に応じてエラーメッセージを返す
 			String characterType = "";
 			for(int i=0; i<characterTypeList.size(); i++){
 				if(0<i){
@@ -78,7 +68,6 @@ public class InputChecker {
 		return stringList;
 	}
 
-	//パスワードが同じか検証
 	public List<String> doPasswordCheck (String password, String reConfirmationPassword){
 		List<String> stringList = new ArrayList<String>();
 		if(!password.equals(reConfirmationPassword)){
